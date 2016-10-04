@@ -21,5 +21,6 @@ set(common_SCRIPT_LUA_API_SRCS
 
 set(client_SCRIPT_LUA_API_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/l_mainmenu.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/l_canvas.cpp
 	PARENT_SCOPE)
 

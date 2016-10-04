@@ -524,6 +524,7 @@ set(client_SRCS
 	guiscalingfilter.cpp
 	guiTable.cpp
 	guiVolumeChange.cpp
+        canvas.cpp
 	hud.cpp
 	imagefilters.cpp
 	intlGUIEditBox.cpp
