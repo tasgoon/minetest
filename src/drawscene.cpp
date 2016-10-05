@@ -549,6 +549,10 @@ void draw_scene(video::IVideoDriver *driver, scene::ISceneManager *smgr,
 			mapper.drawMinimap();
 	}
 
+    if (canvas->initialized) {
+        canvas->draw(driver);
+    }
+
 	guienv->drawAll();
 
 	timer.stop(true);

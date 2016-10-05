@@ -23,8 +23,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 #include "camera.h"
 #include "hud.h"
 #include "minimap.h"
+#include "canvas.h"
 #include "irrlichttypes_extrabloated.h"
-
 
 void draw_load_screen(const std::wstring &text, IrrlichtDevice *device,
 		gui::IGUIEnvironment *guienv, float dtime = 0, int percent = 0,
