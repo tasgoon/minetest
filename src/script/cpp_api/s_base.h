@@ -106,6 +106,9 @@ protected:
 	GUIEngine* getGuiEngine() { return m_guiengine; }
 	void setGuiEngine(GUIEngine* guiengine) { m_guiengine = guiengine; }
 
+    Canvas* getCanvas() { return m_canvas; }
+    Canvas* setCanvas(Canvas* canvas) { m_canvas = canvas; }
+
 	void objectrefGetOrCreate(lua_State *L, ServerActiveObject *cobj);
 	void objectrefGet(lua_State *L, u16 id);
 
@@ -123,6 +126,7 @@ private:
 	Server*         m_server;
 	Environment*    m_environment;
 	GUIEngine*      m_guiengine;
+    Canvas*         m_canvas;
 };
 
 #endif /* S_BASE_H_ */

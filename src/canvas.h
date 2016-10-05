@@ -6,7 +6,11 @@
 class Canvas
 {
 public:
-    void setupCanvas(video::IVideoDriver* driver);
+    Canvas(video::IVideoDriver* driver);
+    ~Canvas();
+
+    void setupCanvas();
+    void destroyCanvas();
     void draw(video::IVideoDriver* driver);
 
     void setPixel(u32 x, u32 y, video::SColor color);
@@ -15,8 +19,7 @@ public:
     bool initialized = false;
 private:
     video::IImage* image;
+    video::IVideoDriver* driver;
 };
-
-Canvas* canvas = new Canvas();
 
 #endif // CANVAS_H

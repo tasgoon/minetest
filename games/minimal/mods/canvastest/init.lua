@@ -9,6 +9,10 @@ function test.init()
     print("W00t.")
 end
 
+function test.draw()
+    print("no.")
+end
+
 minetest.register_on_punchnode(
     function(pos, node, puncher, pointed_thing)
         if node.name == "canvastest:test_block" then

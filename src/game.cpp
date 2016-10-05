@@ -21,6 +21,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 #include <iomanip>
 #include "camera.h"
+#include "canvas.h"
 #include "client.h"
 #include "client/tile.h"     // For TextureSource
 #include "client/keys.h"
@@ -1686,6 +1687,7 @@ private:
 	GUIChatConsole *gui_chat_console; // Free using ->Drop()
 	MapDrawControl *draw_control;
 	Camera *camera;
+    Canvas *canvas;
 	Clouds *clouds;	                  // Free using ->Drop()
 	Sky *sky;                         // Free using ->Drop()
 	Inventory *local_inventory;
@@ -1869,9 +1871,11 @@ bool Game::startup(bool *kill,
 	keycache.populate();
 
 	driver              = device->getVideoDriver();
-	smgr                = device->getSceneManager();
+    smgr                = device->getSceneManager();
 
 	smgr->getParameters()->setAttribute(scene::OBJ_LOADER_IGNORE_MATERIAL_FILES, true);
+
+    canvas = new Canvas(driver);
 
 	if (!init(map_dir, address, port, gamespec))
 		return false;
@@ -2218,6 +2222,7 @@ bool Game::createClient(const std::string &playername,
 	player->hurt_tilt_strength = 0;
 
 	hud = new Hud(driver, smgr, guienv, gamedef, player, local_inventory);
+    canvas->
 
 	if (!hud) {
 		*error_message = "Memory error: could not create HUD";
@@ -4261,7 +4266,7 @@ void Game::updateFrame(ProfilerGraph *graph, RunStats *stats,
 	}
 
 	draw_scene(driver, smgr, *camera, *client, player, *hud, *mapper,
-			guienv, screensize, skycolor, flags.show_hud,
+            guienv, canvas, screensize, skycolor, flags.show_hud,
 			flags.show_minimap);
 
 	/*

@@ -17,6 +17,11 @@ int ModApiCanvas::l_create_canvas(lua_State *L)
     return 0;
 }
 
+int ModApiCanvas::l_destroy_canvas(lua_State *L)
+{
+
+}
+
 int ModApiCanvas::l_get_pixel(lua_State *L)
 {
     return 1;

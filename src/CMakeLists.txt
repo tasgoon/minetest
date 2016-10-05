@@ -502,6 +502,7 @@ set(client_SRCS
 	${client_network_SRCS}
 	${client_irrlicht_changes_SRCS}
 	camera.cpp
+        canvas.cpp
 	client.cpp
 	clientmap.cpp
 	clientmedia.cpp
@@ -523,8 +524,7 @@ set(client_SRCS
 	guiPasswordChange.cpp
 	guiscalingfilter.cpp
 	guiTable.cpp
-	guiVolumeChange.cpp
-        canvas.cpp
+        guiVolumeChange.cpp
 	hud.cpp
 	imagefilters.cpp
 	intlGUIEditBox.cpp

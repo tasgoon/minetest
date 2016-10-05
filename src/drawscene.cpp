@@ -468,7 +468,7 @@ void draw_plain(Camera &camera, bool show_hud, Hud &hud,
 
 void draw_scene(video::IVideoDriver *driver, scene::ISceneManager *smgr,
 		Camera &camera, Client& client, LocalPlayer *player, Hud &hud,
-		Mapper &mapper, gui::IGUIEnvironment *guienv,
+        Mapper &mapper, gui::IGUIEnvironment *guienv, Canvas* canvas,
 		const v2u32 &screensize, const video::SColor &skycolor,
 		bool show_hud, bool show_minimap)
 {
